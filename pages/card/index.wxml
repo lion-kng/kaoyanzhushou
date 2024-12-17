@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="card kaiti" bindtap="showPopup" data-info="灰灰考研是。。。。">
+    <text>灰灰考研</text>
+  </view>
+  <view class="card kaiti" bindtap="showPopup" data-info="王道计算机。。。。">
+    <text>王道计算机考研</text>
+  </view>
+  <view class="card kaiti" bindtap="showPopup" data-info="这是卡片3的内容">
+    <text>卡片3</text>
+  </view>
+</view>
+
+<view wx:if="{{showPopup}}" class="popup">
+  <view class="popup-content">
+    <text>{{popupInfo}}</text>
+    <button bindtap="hidePopup">关闭</button>
+  </view>
+</view>

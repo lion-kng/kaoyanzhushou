@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 90%; /* 调整卡片宽度 */
+  height: 120px; /* 设置卡片高度 */
+  padding: 30px; /* 调整卡片内边距 */
+  margin: 15px 0; /* 调整卡片外边距 */
+  border-radius: 16px; /* 设置圆角 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  color: #fff; /* 设置文字颜色为白色 */
+
+}
+
+.card:nth-child(1) {
+  background: linear-gradient(45deg, #ff00ff, #800080); /* 更鲜艳的紫色渐变 */
+}
+
+.card:nth-child(2) {
+  background: linear-gradient(45deg, #00ff00, #008000); /* 更鲜艳的绿色渐变 */
+}
+
+.card:nth-child(3) {
+  background: linear-gradient(45deg, #ff8c00, #ff4500); /* 更鲜艳的橙色渐变 */
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  width: 80%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* 字体定义 */
+.kaiti {
+  font-size: 24px; /* 设置文字大小 */
+  font-weight: bold; /* 设置文字加粗 */
+  font-family: 'KaiTi', '楷体', serif; /* 更换字体 */
+}
