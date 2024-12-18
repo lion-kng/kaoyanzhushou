@@ -28,7 +28,7 @@ Page({
       }
     }
   },
-  onLoad(){
+  onLoad(options){
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
@@ -173,7 +173,11 @@ setTimeout(() => {
       },
       imageUrl: '/image/about.png'
     }
+  },
+  editUserInfo: function () {
+    wx.navigateTo({
+      url: '/pages/setting/editUserInfo/editUserInfo'
+    });
   }
-
 
 })

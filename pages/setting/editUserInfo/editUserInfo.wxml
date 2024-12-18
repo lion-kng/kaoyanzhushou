@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="form-item">
+    <label>用户名</label>
+    <input type="text" placeholder="请输入用户名" value="{{username}}" bindinput="bindUsernameInput"/>
+  </view>
+  <view class="form-item">
+    <label>学校</label>
+    <input type="text" placeholder="请输入学校" value="{{school}}" bindinput="bindSchoolInput"/>
+  </view>
+  <view class="form-item">
+    <label>专业</label>
+    <input type="text" placeholder="请输入专业" value="{{major}}" bindinput="bindMajorInput"/>
+  </view>
+  <view class="form-item">
+    <label>目标院校</label>
+    <input type="text" placeholder="请输入目标院校" value="{{targetSchool}}" bindinput="bindTargetSchoolInput"/>
+  </view>
+  <view class="form-item">
+    <label>目标专业</label>
+    <input type="text" placeholder="请输入目标专业" value="{{targetMajor}}" bindinput="bindTargetMajorInput"/>
+  </view>
+  <button bindtap="saveUserInfo">保存</button>
+</view>

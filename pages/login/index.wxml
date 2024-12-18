@@ -1,0 +1,6 @@
+<view class="container">
+    <input class="input" type="text" placeholder="请输入用户名" bindinput="bindUsernameInput" />
+    <input class="input" type="password" placeholder="请输入密码" bindinput="bindPasswordInput" />
+    <button class="button" bindtap="login">登录</button>
+    <button class="button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号授权登录</button>
+</view>

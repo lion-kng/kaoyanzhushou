@@ -1,6 +1,6 @@
 {
   "description": "项目配置文件。",
-  "cloudfunctionRoot": "functions/",
+  "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.21.3",
-  "appid": "touristappid",
+  "appid": "wx2424aa64bd76dd38",
   "projectname": "github-focus",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

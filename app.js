@@ -7,6 +7,9 @@ const defaultTime = {
 
 App({
   onLaunch: function() {
+    wx.cloud.init({
+      env: 'kaoyanzhushou-0gjcwizg6a48443a'
+    })
     let workTime = wx.getStorageSync('workTime')
     let restTime = wx.getStorageSync('restTime')
     
@@ -22,6 +25,21 @@ App({
         data: defaultTime.defaultRestTime
       })
     }
+
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      }
+    })
+  },
+  globalData: {
+    userInfo: null
   }
   // viblong: function(){
 

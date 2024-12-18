@@ -3,14 +3,15 @@
   "weui": true
 },
   "pages": [
-    
+    "pages/login/index",
+    "pages/setting/editUserInfo/editUserInfo",
+    "pages/focus/index",
     "pages/card/index",
     "pages/setting/rank/rank",
     "pages/setting/setting",
+    
     "pages/logs/logs",
     "pages/index/index",
-    
-    
     
     
     "pages/setting/setmore/setmore",
@@ -28,9 +29,10 @@
 
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#EDEDED",
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "微信小程序",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee"
    }, 
   "tabBar": {
     "color": "#cdcdcd",
@@ -40,6 +42,10 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/focus/index",
         "iconPath": "image/yu.png",
         "selectedIconPath": "image/yu2.png",
         "text": "专注"
@@ -50,13 +56,7 @@
         "iconPath": "image/todo2.png",
         "selectedIconPath": "image/todo.png",
         "text": "待办"
-      },      
-      {
-        "pagePath": "pages/logs/logs",
-        "iconPath": "image/jilu.png",
-        "selectedIconPath": "image/jilu2.png",
-        "text": "记录"
-      },
+      }, 
       {
         "pagePath": "pages/setting/setting",
         "iconPath": "image/shezhi.png",

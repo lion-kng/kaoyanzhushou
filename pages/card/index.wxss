@@ -14,7 +14,6 @@
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   color: #fff; /* 设置文字颜色为白色 */
-
 }
 
 .card:nth-child(1) {
