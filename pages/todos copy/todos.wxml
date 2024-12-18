@@ -1,9 +1,8 @@
-<!-- filepath: /e:/桌面/kaoyanzhushou/pages/todos/todos.wxml -->
 <view class="todo_container">
   <view class="header">
     <input class="new-todo" value="{{ input }}" placeholder="添加任务" bindinput="inputChangeHandle" bindconfirm="addTodoHandle" confirm-type="done"/>
     <picker mode="selector" range="{{ todoTypes }}" value="{{ todoTypeIndex }}" bindchange="typeChangeHandle">
-      <view class="picker-button">{{ todoTypes[todoTypeIndex] }}</view>
+      <view class="picker">{{ todoTypes[todoTypeIndex] }}</view>
     </picker>
     <image class="plus" wx:if="{{input}}" bindtap="addTodoHandle" src="../../image/yes.png"/>
   </view>
@@ -31,4 +30,11 @@
       </view>
     </view>
   </block>
+
+  <view class="footer" wx:if="{{ urgentTodos.length || nonUrgentTodos.length }}">
+    <image class="btn" bindtap="toggleAllHandle" src="../../image/allselect.png"/>
+    <text class="foottext" wx:if="{{ leftCount }}">剩 {{ leftCount }} {{ leftCount === 1 ? '个' : '个' }}任务待完成</text>
+    <image class="btn" wx:if="{{ urgentTodos.length + nonUrgentTodos.length > leftCount }}" bindtap="clearCompletedHandle" src="../../image/delete.png"/>
+  </view>
 </view>
+<toast hidden="{{toastHidden}}" bindchange="hideToast">已清除</toast>
