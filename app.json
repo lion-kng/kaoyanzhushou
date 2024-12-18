@@ -3,13 +3,13 @@
   "weui": true
 },
   "pages": [
-    "pages/login/index",
+    "pages/login/login",
     "pages/setting/editUserInfo/editUserInfo",
     "pages/focus/index",
     "pages/card/index",
     "pages/setting/rank/rank",
     "pages/setting/setting",
-    
+    "pages/register/register",
     "pages/logs/logs",
     "pages/index/index",
     

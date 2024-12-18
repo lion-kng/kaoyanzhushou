@@ -7,9 +7,34 @@ const defaultTime = {
 
 App({
   onLaunch: function() {
-    wx.cloud.init({
-      env: 'kaoyanzhushou-0gjcwizg6a48443a'
-    })
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init({
+        traceUser: true,
+      })
+    }
+
+    // 检查本地存储中的登录状态
+    const isLoggedIn = wx.getStorageSync('isLoggedIn');
+    if (isLoggedIn) {
+      // 如果已经登录过，直接跳转到首页
+      wx.switchTab({
+        url: '/pages/focus/index'
+      });
+    }
+
+    // 获取 openid 并存储到本地
+    wx.cloud.callFunction({
+      name: 'login',
+      success: res => {
+        wx.setStorageSync('openid', res.result.openid);
+      },
+      fail: err => {
+        console.error('获取 openid 失败', err);
+      }
+    });
+
     let workTime = wx.getStorageSync('workTime')
     let restTime = wx.getStorageSync('restTime')
     

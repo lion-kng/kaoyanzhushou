@@ -1,8 +1,7 @@
 Page({
     data: {
         username: '',
-        password: '',
-        phoneNumber: ''
+        password: ''
     },
 
     bindUsernameInput: function(e) {
@@ -17,42 +16,37 @@ Page({
         });
     },
 
-    bindPhoneNumberInput: function(e) {
-        this.setData({
-            phoneNumber: e.detail.value
-        });
-    },
-
-    login: function() {
+    register: function() {
         const { username, password } = this.data;
-        if (username === '' || password === '') {
+
+        if (!username || !password) {
             wx.showToast({
-                title: '用户名或密码不能为空',
+                title: '请输入用户名和密码',
                 icon: 'none'
             });
             return;
         }
-    },
 
-    getPhoneNumber: function(e) {
         wx.cloud.callFunction({
-            name: 'login',
+            name: 'register',
             data: {
-                phoneNumber: this.data.phoneNumber
+                username,
+                password
             },
             success: res => {
-                if (res.result && res.result.result && res.result.result.errCode === 0) {
+                if (res.result && res.result.success) {
                     wx.showToast({
-                        title: '登录成功',
+                        title: '注册成功',
                         icon: 'success'
                     });
-                    // 跳转到首页
+                    // 跳转到登录页
                     wx.redirectTo({
-                        url: '/pages/index/index'
+                        url: '/pages/login/login'
                     });
                 } else {
+                    console.log(username, password);
                     wx.showToast({
-                        title: '登录失败',
+                        title: res.result.message || '注册失败',
                         icon: 'none'
                     });
                 }
@@ -67,4 +61,3 @@ Page({
         });
     }
 });
-
