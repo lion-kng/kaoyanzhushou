@@ -1,9 +1,8 @@
-<!-- filepath: /e:/桌面/kaoyanzhushou/pages/todos/todos.wxml -->
 <view class="todo_container">
   <view class="header">
     <input class="new-todo" value="{{ input }}" placeholder="添加任务" bindinput="inputChangeHandle" bindconfirm="addTodoHandle" confirm-type="done"/>
     <picker mode="selector" range="{{ todoTypes }}" value="{{ todoTypeIndex }}" bindchange="typeChangeHandle">
-      <view class="picker-button">{{ todoTypes[todoTypeIndex] }}</view>
+      <view class="picker">{{ todoTypes[todoTypeIndex] }}</view>
     </picker>
     <image class="plus" wx:if="{{input}}" bindtap="addTodoHandle" src="../../image/yes.png"/>
   </view>
@@ -12,9 +11,10 @@
     <view class="section">
       <text class="section-title">重要且紧急</text>
       <view class="todos">
-        <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ urgentTodos }}" wx:key="index" bindtap="toggleTodoHandle" data-index="{{ index }}" data-type="urgent">
-          <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
+        <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ urgentTodos }}" wx:key="index" data-index="{{ index }}" data-type="urgent">
+          <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}" bindtap="toggleTodoHandle" data-index="{{ index }}" data-type="urgent"/>
           <text class="todo-text">{{ item.text }}</text>
+          <button class="delete-btn" bindtap="removeTodoHandle" data-index="{{ index }}" data-type="urgent">删除</button>
         </view>
       </view>
     </view>
@@ -24,11 +24,20 @@
     <view class="section">
       <text class="section-title">重要但不紧急</text>
       <view class="todos">
-        <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ nonUrgentTodos }}" wx:key="index" bindtap="toggleTodoHandle" data-index="{{ index }}" data-type="non-urgent">
-          <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
+        <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ nonUrgentTodos }}" wx:key="index" data-index="{{ index }}" data-type="non-urgent">
+          <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}" bindtap="toggleTodoHandle" data-index="{{ index }}" data-type="non-urgent"/>
           <text class="todo-text">{{ item.text }}</text>
+          <button class="delete-btn" bindtap="removeTodoHandle" data-index="{{ index }}" data-type="non-urgent">删除</button>
         </view>
       </view>
     </view>
   </block>
+
+  <view class="footer">
+    <button class="stats-btn" bindtap="navigateToStatistics">查看统计</button>
+  </view>
+
+  <toast hidden="{{toastHidden}}" bindchange="hideToast">已清除</toast>
 </view>
+
+
