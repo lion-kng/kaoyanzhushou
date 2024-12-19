@@ -277,7 +277,7 @@ Page({
 
   navigateToStatistics: function () {
     wx.navigateTo({
-      url: '/pages/statistics/statistics'
+      url: '/pages/todos/statistics/statistics'
     });
   },
 

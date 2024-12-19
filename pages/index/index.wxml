@@ -1,2 +1,35 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<!-- filepath: /e:/桌面/kaoyanzhushou/pages/index/index.wxml -->
+<view class="container">
+  <!-- 第一部分 -->
+  <view class="section section-1">
+    <text class="section-title">热门院校</text>
+    <scroll-view class="scroll-container" scroll-x="true" scroll-with-animation="true">
+      <view class="box" wx:for="{{boxes}}" wx:key="index">
+        <image class="box-image" src="{{item.image}}" mode="aspectFill"></image>
+        <text class="box-text">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 第二部分 -->
+  <view class="section section-2">
+    <text class="section-title">部分二</text>
+    <view class="grid-container">
+      <view class="grid-box" wx:for="{{gridBoxes}}" wx:key="index">
+        <text class="grid-box-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 第三部分 -->
+  <view class="section section-3">
+    <text class="section-title">热门专业</text>
+    <scroll-view class="scroll-container" scroll-x="true" scroll-with-animation="true">
+      <view class="box" wx:for="{{majors}}" wx:key="index">
+        <text class="box-text">{{item.major}}</text>
+        <text class="box-subtext">{{item.university}}</text>
+        <image class="box-image" src="{{item.image}}" mode="aspectFill"></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>

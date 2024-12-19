@@ -1,6 +1,2 @@
-<!-- filepath: /e:/桌面/kaoyanzhushou/pages/statistics/statistics.wxml -->
-<view class="container">
-  <view class="chart-container">
-    <canvas canvas-id="barCanvas" style="width: 100%; height: 400px;"></canvas>
-  </view>
-</view>
+<!--pages/statistics/statistics.wxml-->
+<text>pages/statistics/statistics.wxml</text>

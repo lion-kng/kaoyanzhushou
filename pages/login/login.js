@@ -69,7 +69,7 @@ Page({
         if (isLoggedIn) {
             // 如果已经登录过，直接跳转到首页
             wx.switchTab({
-                url: '/pages/focus/index'
+                url: '/pages/index/index'
             });
         }
     }

@@ -1,78 +1,66 @@
-import wxCharts from '../../utils/wxcharts.js';
-
+// pages/statistics/statistics.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    urgentTodos: [],
-    nonUrgentTodos: [],
-    completedUrgentTodos: [],
-    completedNonUrgentTodos: [],
-    days: []
+
   },
 
-  onLoad: function () {
-    this.loadStatistics();
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+
   },
 
-  loadStatistics: function () {
-    wx.cloud.callFunction({
-      name: 'getStatistics',
-      success: res => {
-        const statistics = res.result.data;
-        this.processStatistics(statistics);
-      },
-      fail: err => {
-        console.error('获取统计数据失败', err);
-      }
-    });
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
   },
 
-  processStatistics: function (statistics) {
-    if (!Array.isArray(statistics)) {
-      console.error('统计数据格式错误:', statistics);
-      return;
-    }
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
 
-    const completedUrgentTodos = [];
-    const completedNonUrgentTodos = [];
-    const days = [];
-
-    statistics.forEach(stat => {
-      const date = new Date(stat.date);
-      const day = `${date.getMonth() + 1}-${date.getDate()}`;
-      days.push(day);
-      completedUrgentTodos.push(stat.urgentTodos_num);
-      completedNonUrgentTodos.push(stat.nonUrgentTodos_num);
-    });
-
-    this.setData({
-      completedUrgentTodos: completedUrgentTodos,
-      completedNonUrgentTodos: completedNonUrgentTodos,
-      days: days
-    });
-
-    this.drawChart();
   },
 
-  drawChart: function () {
-    new wxCharts({
-      canvasId: 'barCanvas',
-      type: 'column',
-      categories: this.data.days,
-      series: [{
-        name: '重要且紧急',
-        data: this.data.completedUrgentTodos,
-        color: '#FF0000'
-      }, {
-        name: '重要但不紧急',
-        data: this.data.completedNonUrgentTodos,
-        color: '#00FF00'
-      }],
-      yAxis: {
-        title: '完成任务数量',
-        min: 0
-      },
-      width: 320,
-      height: 400
-    });
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
   }
-});
+})

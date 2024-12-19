@@ -1,66 +1,59 @@
-// pages/index/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    boxes: [
+      { name: '北京大学', image: '/image/university/北京大学.jpg' },
+      { name: '复旦大学', image: '/image/university/复旦大学.jpg' },
+      { name: '广西民族大学', image: '/image/university/广西民族大学.jpg' },
+      { name: '黑龙江工程学院', image: '/image/university/黑龙江工程学院.jpg' },
+      { name: '内蒙古财经大学', image: '/image/university/内蒙古财经大学.jpeg' },
+      { name: '清华大学', image: '/image/university/清华大学.jpg' },
+      { name: '上海交通大学', image: '/image/university/上海交通大学.jpg' },
+      { name: '西藏大学', image: '/image/university/西藏大学.jpg' },
+      { name: '浙江大学', image: '/image/university/浙江大学.jpg' }
+    ],
+    majors: [
+      { major: '法律(非法学)', university: '西南大学', image: '/image/university/西南大学.jpg' },
+      { major: '会计', university: '苏州大学', image: '/image/university/苏州大学.jpg' },
+      { major: '电子信息', university: '暨南大学', image: '/image/university/暨南大学.jpg' },
+      { major: '计算机技术', university: '武汉理工大学', image: '/image/university/武汉理工大学.png' },
+      { major: '计算机科学与技术', university: '南京理工大学', image: '/image/university/南京理工大学.png' },
+      { major: '社会工作', university: '南昌大学', image: '/image/university/南昌大学.jpg' },
+      { major: '物流工程与管理', university: '南京大学', image: '/image/university/南京大学.png' },
 
+
+    ],
+    gridBoxes: ['方框1', '方框2', '方框3', '方框4']
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad: function (options) {
+    // 页面加载时的逻辑
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onReady: function () {
+    // 页面初次渲染完成时的逻辑
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onShow: function () {
+    // 页面显示时的逻辑
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  onHide: function () {
+    // 页面隐藏时的逻辑
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  onUnload: function () {
+    // 页面卸载时的逻辑
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  onPullDownRefresh: function () {
+    // 下拉刷新时的逻辑
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  onReachBottom: function () {
+    // 页面上拉触底时的逻辑
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onShareAppMessage: function () {
+    // 用户点击右上角分享时的逻辑
   }
-})
+});
