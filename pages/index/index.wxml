@@ -4,13 +4,13 @@
   <view class="section section-1">
     <text class="section-title">热门院校</text>
     <scroll-view class="scroll-container" scroll-x="true" scroll-with-animation="true">
-      <view class="box" wx:for="{{boxes}}" wx:key="index">
+      <view class="box" wx:for="{{boxes}}" wx:key="index" bindtap="showBoxInfo" data-info="{{item}}">
         <image class="box-image" src="{{item.image}}" mode="aspectFill" style="border-radius: 0;"></image>
         <text class="box-text">{{item.name}}</text>
       </view>
     </scroll-view>
   </view>
-<!-- <image class="box-image" src="{{item.image}}" mode="aspectFill" style="你的样式"></image> -->
+
   <!-- 第二部分 -->
   <view class="section section-2">
     <!-- <text class="section-title">部分二</text> -->
@@ -26,7 +26,7 @@
   <view class="section section-3">
     <text class="section-title">热门专业</text>
     <scroll-view class="scroll-container" scroll-x="true" scroll-with-animation="true">
-      <view class="box" wx:for="{{majors}}" wx:key="index">
+      <view class="box" wx:for="{{majors}}" wx:key="index" bindtap="showBoxInfo" data-info="{{item}}">
         <text class="box-text">{{item.major}}</text>
         <text class="box-subtext">{{item.university}}</text>
         <image class="box-image" src="{{item.image}}" mode="aspectFill"></image>
