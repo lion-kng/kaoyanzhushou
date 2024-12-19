@@ -10,7 +10,7 @@
       </view>
     </scroll-view>
   </view>
-<image class="box-image" src="{{item.image}}" mode="aspectFill" style="你的样式"></image>
+<!-- <image class="box-image" src="{{item.image}}" mode="aspectFill" style="你的样式"></image> -->
   <!-- 第二部分 -->
   <view class="section section-2">
     <!-- <text class="section-title">部分二</text> -->
