@@ -18,11 +18,14 @@ Page({
       { major: '计算机技术', university: '武汉理工大学', image: '/image/university/武汉理工大学.png' },
       { major: '计算机科学与技术', university: '南京理工大学', image: '/image/university/南京理工大学.png' },
       { major: '社会工作', university: '南昌大学', image: '/image/university/南昌大学.jpg' },
-      { major: '物流工程与管理', university: '南京大学', image: '/image/university/南京大学.png' },
-
-
+      { major: '物流工程与管理', university: '南京大学', image: '/image/university/南京大学.png' }
     ],
-    gridBoxes: ['方框1', '方框2', '方框3', '方框4']
+    gridBoxes: [
+      { text: '院校查询', image: '/image/院校查询.jpg' },
+      { text: '备考社群', image: '/image/备考社群.jpg' },
+      { text: '考研日程', image: '/image/考研日程.jpg' },
+      { text: '考研指南', image: '/image/考研指南.jpg' }
+    ]
   },
 
   onLoad: function (options) {
