@@ -1,0 +1,105 @@
+<!--pages/zhinan/zhinan.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">考研指南</text>
+    <image class="header-image" src="/image/kaoyanzhinan1.png" style="position: relative; left: -66rpx; top: 0rpx"></image>
+  </view>
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：考研的报考条件有什么？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：满足以下任意一条件均可报考：
+      1.国家承认学历的应届本科毕业生；
+      2.具有国家承认的大学本科毕业学历的人员；
+      3.获得国家承认的高职高专毕业学历后满2年（从毕业后到录取当年入学之日，下同）或2年以上的人员，以及国家承认学历的本科结业生。
+      4.S已获硕士、博士学位的人员（在校研究生报考须在报名前征得所在培养单位同意）。对于个别专业的额外限制条件，详见研招网研究生报考条件。</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：考研分哪些阶段？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：1.准备阶段：2024年3月中旬前，搜集考研资料，确定考研目标院校和专业。
+
+      2.基础阶段：2024年3月中旬-2024年6月，第一轮复习，注重基础，重点复习英语和数学、专业课。政治可以在马原这门学科多积累。
+
+      3.强化阶段：2024年7月-2024年8月，这个阶段为暑期，由于具备了基础阶段的积累，对问题、知识点的认知己有一定的基础。数学、英语、专业课进行第2轮的复习。政治第一轮也要全方位开始。
+
+      4.提高阶段：2024年9月-2024年10月，该阶段在整个考研过程中是一个知识、技能提高和深化的阶段，也是最直接为冲刺服务的阶段。另外，招生简章、考研大纲都出来了，也要格外关注。
+
+      5.冲刺阶段：2024年11月-2024年12月，第三轮复习，做真题模拟题，现场确认一般在11月。
+
+      6.临考阶段：2024年12月中旬，打印准考证。
+
+      7.复试备考阶段：2025年1月-2月，备考复试。
+
+      8.复试调剂阶段：2025年3月-5月，进行复试或调剂。
+
+      9.录取阶段：2025年6月-9月，政审、领取通知书等。</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：考研考试科目有哪些？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：一般共四门：两门公共课、两门业务课。
+
+      两门公共课为：政治、英语一或英语二;
+
+      业务课一为：数学或专业基础;
+
+      业务课二(分为13大类)：哲学、经济学、法学、教育学、文学、历史学、理学、工学、农学、医学、军事学、管理学、艺术学等。</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：学硕和专硕的区别在哪？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：1.培养方向不同
+      学术型硕士教育以培养教学和科研人才为主，授予学术型学位。
+      专业型硕士以培养市场紧缺的应用型人才为主，是为克服学术型硕士的不足新增的一种硕士。
+
+      2.招生条件不同
+      学术型硕士报考者无需有一定年限的工作经历。
+      工商管理、公共管理、工程管理、旅游管理、工程硕士中的项目管理、教育硕士中的教育管理、体育硕士中的竞赛组织专业学位硕士研究生对工作年限有一定要求。
+
+      3.学制不同
+      学硕的学习年限一般为3年;专硕的学习年限一般为2年。</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：A区和B区是什么，又都有哪些省份?</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">考虑到各地区教育程度不同，根据教育水平的高低划分为A区和B区，B区分数要低一些。一般来说，同专业B类的国家线总分要比A类低10分。
+
+      A区：北京、天津、上海、江苏、浙江、福建、山东、河南、湖北、湖南、广东、河北、山西、辽宁、吉林、黑龙江、安徽、江西、重庆、四川、陕西
+      B区：内蒙古、广西、海南、贵州、云南、西藏、甘肃、青海、宁夏、新疆</text>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：考研分数线是多少？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：</text>
+      <image src="/image/kaoyanzhinan2.png" bindtap="preview"></image>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="question">
+      <text class="question-text">问题：考研调剂是什么？</text>
+    </view>
+    <view class="answer">
+      <text class="answer-text">解答：教育部规定，考生如果符合复试条件而不能在第一志愿院校参加复试的，考生档案应送至第二志愿院校或在省、自治区、直辖市内调剂。 在研究生招生工作中，由于招生计划的限制，有些考生虽然达到分数线，但并不能被安排复试或复试后并不能被录取，对这些考生，招生单位将负责把其全部材料及时转至第二志愿单位，这个过程即称为考研调剂。
+      研究生调剂通常在国家线发布之后启动，时间大致在3月中旬至4月底之间，详细日期会由研究生招生信息网进行通知。需要注意的是，只有考生成绩达到一志愿报考专业在调入地区所对应的国家线，才具备申请调剂的资格。</text>
+    </view>
+  </view>
+</view>

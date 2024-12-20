@@ -1,0 +1,11 @@
+<!--pages/searchschool/searchschool.wxml-->
+<view class="container">
+  <block wx:for="{{schools}}" wx:key="unique">
+    <view class="school" bindtap="goToSchoolHomepage" data-url="{{item.url}}">
+      <image src="{{item.icon}}" class="school-icon" style="position: relative; left: 20rpx; top: 8rpx"></image>
+      <view class="nameblock" style="position: relative; left: 97rpx; top: -65rpx">
+        <text style="position: relative; left: 81rpx; top: -89rpx" class="schoolname">{{item.name}}</text>
+      </view>
+    </view>  
+  </block>
+</view>

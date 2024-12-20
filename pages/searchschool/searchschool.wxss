@@ -1,0 +1,30 @@
+/* pages/searchschool/searchschool.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.school{
+  margin-top: 20px;
+  /* border: 0.5px solid rgb(5, 80, 80); */
+  width: 350px;
+  height: 110px;
+  background-color: white;
+}
+
+.nameblock{
+  width:250px;
+  text-align: center;
+}
+
+.school-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.schoolname{
+  font-size: 25px;
+}

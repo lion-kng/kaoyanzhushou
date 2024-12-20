@@ -1,0 +1,9 @@
+<!--pages/shequn/shequn.wxml-->
+<view class="bg">
+  <image class="background" src="/image/shequn.png">
+  </image>
+</view>
+<view class="code">
+  <image class=shequncode" src="/image/shequncode.png" show-menu-by-longpress="{{true}}" style="position: relative; left: 173rpx; top: -737rpx; width: 405rpx; height: 405rpx; display: inline-block; box-sizing: border-box">
+  </image>
+</view>

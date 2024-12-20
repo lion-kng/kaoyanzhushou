@@ -44,7 +44,7 @@ Page({
                     wx.setStorageSync('openid', res.result.openid);
                     // 跳转到首页
                     wx.switchTab({
-                        url: '/pages/focus/index'
+                        url: '/pages/index/index'
                     });
                 } else {
                     wx.showToast({
@@ -62,6 +62,12 @@ Page({
             }
         });
     },
+
+    goToRegister: function () {
+        wx.navigateTo({
+          url: '/pages/register/register'
+        });
+      },
 
     onLoad: function() {
         // 检查本地存储中的登录状态

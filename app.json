@@ -3,6 +3,10 @@
   "weui": true
 },
   "pages": [
+    "pages/searchschool/searchschool",
+    "pages/schoolHomepage/schoolHomepage",
+    "pages/richeng/richeng",
+    "pages/zhinan/zhinan",
     "pages/login/login",
     "pages/setting/editUserInfo/editUserInfo",
     "pages/focus/index",
@@ -13,6 +17,12 @@
     "pages/logs/logs",
     "pages/index/index",
     "pages/todos/statistics/statistics",
+    
+    
+    
+    "pages/setting/feedback/feedback",
+    
+    "pages/shequn/shequn",
     
     "pages/setting/setmore/setmore",
     "pages/about/about",

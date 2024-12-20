@@ -1,0 +1,2 @@
+<!--pages/schoolHomepage/schoolHomepage.wxml-->
+<web-view wx:if="{{schoolUrl}}" src="{{schoolUrl}}"></web-view>
