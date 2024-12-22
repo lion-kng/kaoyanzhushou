@@ -1,18 +1,8 @@
 <view class="container">
-  <text class="label">请输入用户名</text>
   <input class="input" placeholder="用户名" value="{{username}}" data-field="username" bindinput="bindInput" />
-
-  <text class="label">请输入学校</text>
   <input class="input" placeholder="学校" value="{{school}}" data-field="school" bindinput="bindInput" />
-
-  <text class="label">请输入专业</text>
   <input class="input" placeholder="专业" value="{{major}}" data-field="major" bindinput="bindInput" />
-
-  <text class="label">请输入目标学校</text>
   <input class="input" placeholder="目标学校" value="{{targetSchool}}" data-field="targetSchool" bindinput="bindInput" />
-
-  <text class="label">请输入目标专业</text>
   <input class="input" placeholder="目标专业" value="{{targetMajor}}" data-field="targetMajor" bindinput="bindInput" />
-
   <button class="button" bindtap="saveUserInfo">保存</button>
 </view>

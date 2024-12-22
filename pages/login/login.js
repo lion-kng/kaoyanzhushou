@@ -37,15 +37,19 @@ Page({
                 if (res.result && res.result.success) {
                     wx.showToast({
                         title: '登录成功',
-                        icon: 'success'
+                        icon: 'success',
+                        duration: 2000
                     });
                     // 存储登录状态到本地存储
                     wx.setStorageSync('isLoggedIn', true);
                     wx.setStorageSync('openid', res.result.openid);
+
                     // 跳转到首页
-                    wx.switchTab({
+                    setTimeout(() => {
+                        wx.switchTab({
                         url: '/pages/index/index'
-                    });
+                        });
+                    }, 2000); // 延迟2秒
                 } else {
                     wx.showToast({
                         title: res.result.message || '登录失败',

@@ -37,12 +37,17 @@ Page({
                 if (res.result && res.result.success) {
                     wx.showToast({
                         title: '注册成功',
-                        icon: 'success'
+                        icon: 'success',
+                        duration: 2000
                     });
                     // 跳转到登录页
-                    wx.redirectTo({
+                    setTimeout(() => {
+                        wx.redirectTo({
                         url: '/pages/login/login'
-                    });
+                        });
+                    }, 2000); // 延迟2秒
+
+
                 } else {
                     console.log(username, password);
                     wx.showToast({

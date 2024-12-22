@@ -62,8 +62,7 @@ Page({
         if (res.result && res.result.success) {
           wx.showToast({
             title: res.result.message,
-            icon: 'success',
-            duration: 2000
+            icon: 'success'
           });
         } else {
           console.error('操作失败:', res.result)

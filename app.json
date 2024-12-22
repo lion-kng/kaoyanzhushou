@@ -3,11 +3,12 @@
   "weui": true
 },
   "pages": [
+    "pages/login/login",
     "pages/searchschool/searchschool",
     "pages/schoolHomepage/schoolHomepage",
     "pages/richeng/richeng",
     "pages/zhinan/zhinan",
-    "pages/login/login",
+    
     "pages/setting/editUserInfo/editUserInfo",
     "pages/focus/index",
     "pages/card/index",
