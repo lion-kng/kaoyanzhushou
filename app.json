@@ -53,6 +53,8 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath": "image/index1.jpg",
+        "selectedIconPath": "image/index2.png",
         "text": "首页"
       },
       {
