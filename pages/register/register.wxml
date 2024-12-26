@@ -1,5 +1,6 @@
 <view class="container">
-    <input class="input" type="text" placeholder="请输入用户名" bindinput="bindUsernameInput" />
-    <input class="input" type="password" placeholder="请输入密码" bindinput="bindPasswordInput" />
+     <image class="icon" src="/image/login.webp" mode="aspectFit" />
+    <input class="input" type="text" placeholder="{{usernamePlaceholder}}" bindinput="bindUsernameInput" bindfocus="handleFocus" bindblur="handleBlur" data-field="username" />
+    <input class="input" type="password" placeholder="{{passwordPlaceholder}}" bindinput="bindPasswordInput" bindfocus="handleFocus" bindblur="handleBlur" data-field="password" />
     <button class="button" bindtap="register">注册</button>
 </view>

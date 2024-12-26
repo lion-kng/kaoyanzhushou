@@ -1,7 +1,9 @@
 Page({
     data: {
         username: '',
-        password: ''
+        password: '',
+        usernamePlaceholder: '请输入用户名',
+        passwordPlaceholder: '请输入密码'
     },
 
     bindUsernameInput: function(e) {
@@ -14,6 +16,30 @@ Page({
         this.setData({
             password: e.detail.value
         });
+    },
+    handleFocus: function (e) {
+        const field = e.currentTarget.dataset.field;
+        if (field === 'username') {
+          this.setData({
+            usernamePlaceholder: ''
+          });
+        } else if (field === 'password') {
+          this.setData({
+            passwordPlaceholder: ''
+          });
+        }
+    },
+    handleBlur: function (e) {
+        const field = e.currentTarget.dataset.field;
+        if (field === 'username' && !this.data.username) {
+          this.setData({
+            usernamePlaceholder: '请输入用户名'
+          });
+        } else if (field === 'password' && !this.data.password) {
+          this.setData({
+            passwordPlaceholder: '请输入密码'
+          });
+        }
     },
 
     register: function() {

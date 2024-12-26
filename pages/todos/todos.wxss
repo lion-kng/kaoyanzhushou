@@ -3,11 +3,11 @@
   align-items: center;
   margin-bottom: 20px;
   border: 1rpx solid #e0e0e0;
-  border-radius: 10rpx;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px #e0e0e0;
   padding: 20rpx;
-  width: 94%;
-  height: 90rpx;
+  width: 100%;
+  height: 110rpx;
   background-color: #ffffff;
   text-align: center;
   margin-left: 3%;
@@ -34,29 +34,32 @@
 .header .new-todo {
   flex: 1;
   font-size: 28rpx;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 1%; /* 调整左边距 */
+  margin-right: 1%; /* 调整右边距 */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  height: 45px; /* 设置 input 框的高度 */
+  line-height: 45px; /* 设置 line-height */
+  box-sizing: border-box; /* 确保 padding 包含在高度内 */
+  background-color: #ededed;
 }
-
-.new-todo {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.picker {
+.header picker {
   display: inline-block;
-  padding: 10px 20px;
+  /* padding: 10px; */
+  width: 120px;
   margin-left: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
   cursor: pointer;
+  height: 45px;
+  line-height: 45px;
+  box-sizing: border-box; /* 确保 padding 包含在高度内 */
 }
+
+
+
 
 .plus {
   width: 30px;
@@ -90,8 +93,8 @@
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
   background-color: #6f879f;
-  border-radius: 10rpx;
-  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
   background-image: url("https://s3.ax1x.com/2021/03/17/6cxSER.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
@@ -146,10 +149,11 @@
 .delete-btn {
   padding: 5px 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10rpx;
   background-color: #ff4d4f;
   color: white;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .delete-btn:active {
@@ -221,7 +225,7 @@
   padding: 10px 20px;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20rpx;
   background-color: #007bff;
   color: white;
   cursor: pointer;
