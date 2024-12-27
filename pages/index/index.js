@@ -21,10 +21,12 @@ Page({
       { major: '物流工程与管理', university: '南京大学', image: 'https://pic.imgdb.cn/item/67656d9cd0e0a243d4e7434f.jpg'  ,description: '南京大学物流工程与管理专业依托优质教育资源，培养国家重点行业急需的工程管理骨干人才。'}
     ],
     gridBoxes: [
-      { text: '院校查询', image: '/image/院校查询.jpg',url:'/pages/searchschool/searchschool' },
-      { text: '备考社群', image: '/image/备考社群.jpg' ,url:'/pages/shequn/shequn'},
-      { text: '考研日程', image: '/image/考研日程.jpg' ,url:'/pages/richeng/richeng'},
-      { text: '考研指南', image: '/image/考研指南.jpg' ,url:'/pages/zhinan/zhinan'},
+
+      { text: '院校查询', image: 'https://s2.loli.net/2024/12/27/RN6GmoVY8HFXKe1.jpg',url:'/pages/searchschool/searchschool' },
+      { text: '备考社群', image: 'https://s2.loli.net/2024/12/27/LUOjFDkmMBhcIz5.jpg' ,url:'/pages/shequn/shequn'},
+      { text: '考研日程', image: 'https://s2.loli.net/2024/12/27/npQIJjFO7RdTkox.jpg' ,url:'/pages/richeng/richeng'},
+      { text: '考研指南', image: 'https://s2.loli.net/2024/12/27/fOqpHJu9h45gmKT.jpg' ,url:'/pages/zhinan/zhinan'},
+    
     ]
   },
 

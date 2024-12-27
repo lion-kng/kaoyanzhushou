@@ -2,7 +2,7 @@
 <view class="container">
   <view class="header">
     <text class="title">考研指南</text>
-    <image class="header-image" src="/image/kaoyanzhinan1.png" style="position: relative; left: -66rpx; top: 0rpx"></image>
+    <image class="header-image" src="https://s2.loli.net/2024/12/27/K7t5gdz2kxIluEC.png" style="position: relative; left: -66rpx; top: 0rpx"></image>
   </view>
   <view class="content">
     <view class="question">
@@ -89,7 +89,7 @@
     </view>
     <view class="answer">
       <text class="answer-text">解答：</text>
-      <image src="/image/kaoyanzhinan2.png" bindtap="preview"></image>
+      <image src="https://s2.loli.net/2024/12/27/7yuNOJWxifY2zTR.png" bindtap="preview"></image>
     </view>
   </view>
   

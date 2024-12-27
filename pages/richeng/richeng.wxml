@@ -2,7 +2,7 @@
 <view class="container" style="height: 2800rpx; display: block; box-sizing: border-box">
   <view class="header">
     <text class="title">考研日程</text>
-    <image class="header-image" src="/image/kaoyanricheng1.png" style="position: relative; left: -66rpx; top: 0rpx"></image>
+    <image class="header-image" src="https://s2.loli.net/2024/12/27/TqksgXx1nSJHa7P.png" style="position: relative; left: -66rpx; top: 0rpx"></image>
   </view>
   <view class="content">
     <view class="event">

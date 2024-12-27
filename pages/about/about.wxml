@@ -6,7 +6,7 @@
             <view class="weui-article__section">
 
                 <view class="center_img">
-                    <image class="weui-article__img" src="../../image/about.png" mode="aspectFit" style="height: 180px" />
+                    <image class="weui-article__img" src="https://s2.loli.net/2024/12/27/eYifAoxJs9j1ngS.png" mode="aspectFit" style="height: 180px" />
                 </view>
                 <view class="weui-article__p">
                     <!-- 『专注时钟』基于番茄工作法；帮助你高效专注于工作学习，提高效率，摆脱拖延；适用于考研自习、期末备考等场景。 -->
