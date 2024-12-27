@@ -10,7 +10,7 @@
   height: 110rpx;
   background-color: #ffffff;
   text-align: center;
-  margin-left: 3%;
+  /* margin-left: 3%; */
 }
 
 .back_container {

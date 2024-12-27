@@ -59,10 +59,6 @@ Page({
     this.saveTodos();
     console.log('添加任务后 urgentTodos:', this.data.urgentTodos); // 打印 urgentTodos
     console.log('添加任务后 nonUrgentTodos:', this.data.nonUrgentTodos); // 打印 nonUrgentTodos
-
-
-
-
   },
 
   toggleTodoHandle: function (e) {
