@@ -10,17 +10,18 @@
 
 
 .input {
+    height: 35px; /* 设置 input 框的高度 */
+    line-height: 35px; /* 设置 line-height */
+    box-sizing: border-box; /* 确保 padding 包含在高度内 */
     display: block;
     margin: 0 auto;
     text-align: center;
     width: 80%;
-    padding: 10px;
+    padding: 0 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    height: 35px; /* 设置 input 框的高度 */
-    line-height: 35px; /* 设置 line-height */
-    box-sizing: border-box; /* 确保 padding 包含在高度内 */
+
 }
 
 .button {
