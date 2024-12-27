@@ -1,6 +1,6 @@
 <view class="todo_container">
   <view class="header">
-    <input class="new-todo" value="{{ input }}" placeholder="{{taskPlaceholder}}" bindinput="inputChangeHandle" bindfocus="handleFocus" bindconfirm="addTodoHandle" confirm-type="done"/>
+    <input class="new-todo" value="{{ input }}" placeholder="添加任务" bindinput="inputChangeHandle" bindconfirm="addTodoHandle" confirm-type="done"/>
     <picker mode="selector" range="{{ todoTypes }}" value="{{ todoTypeIndex }}" bindchange="typeChangeHandle">
       <view class="picker">{{ todoTypes[todoTypeIndex] }}</view>
     </picker>
@@ -39,5 +39,3 @@
 
   <toast hidden="{{toastHidden}}" bindchange="hideToast">已清除</toast>
 </view>
-
-

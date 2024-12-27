@@ -1,6 +1,7 @@
 Page({
   data: {
     input: '',
+    taskPlaceholder: '请输入任务',
     todoTypes: ['重要且紧急', '重要但不紧急'],
     todoTypeIndex: 0,
     urgentTodos: [],
@@ -30,6 +31,7 @@ Page({
 
   typeChangeHandle: function (e) {
     this.setData({ todoTypeIndex: e.detail.value });
+    // console.log('任务类型:', this.data.todoTypes[this.data.todoTypeIndex]);
   },
 
   addTodoHandle: function (e) {
@@ -40,7 +42,7 @@ Page({
       completed: false,
       type: this.data.todoTypes[this.data.todoTypeIndex]
     };
-
+    console.log('任务类型:', newTodo.type);
     if (newTodo.type === '重要且紧急') {
       this.data.urgentTodos.push(newTodo);
     } else {
@@ -57,6 +59,10 @@ Page({
     this.saveTodos();
     console.log('添加任务后 urgentTodos:', this.data.urgentTodos); // 打印 urgentTodos
     console.log('添加任务后 nonUrgentTodos:', this.data.nonUrgentTodos); // 打印 nonUrgentTodos
+
+
+
+
   },
 
   toggleTodoHandle: function (e) {
@@ -79,10 +85,6 @@ Page({
       leftCount: this.getLeftCount()
     });
 
-    this.saveTodos();
-    console.log('切换任务状态后 urgentTodos:', this.data.urgentTodos); // 打印 urgentTodos
-    console.log('切换任务状态后 nonUrgentTodos:', this.data.nonUrgentTodos); // 打印 nonUrgentTodos
-
     // 更新数据库
     wx.cloud.callFunction({
       name: 'updateStatistics',
@@ -98,6 +100,8 @@ Page({
         console.error('更新统计数据失败', err);
       }
     });
+    
+    
   },
 
   toggleDeleteMode: function () {
@@ -146,115 +150,64 @@ Page({
     const idx = e.currentTarget.dataset.index;
     const type = e.currentTarget.dataset.type;
     const todo = type === 'urgent' ? this.data.urgentTodos[idx] : this.data.nonUrgentTodos[idx];
+    const that = this;
+    wx.showModal({
+      title: '确认删除',
+      content: '您确定要删除这个待办事项吗？',
+      success(res) {
+        if (res.confirm) {
+          // 用户点击了确定按钮
+          // 如果任务已完成，更新数据库
+          if (todo.completed) {
+            wx.cloud.callFunction({
+              name: 'updateStatistics',
+              data: {
+                date: new Date().toDateString(),
+                type: type,
+                increment: -1
+              },
+              success: res => {
+                console.log('更新统计数据成功', res);
+              },
+              fail: err => {
+                console.error('更新统计数据失败', err);
+              }
+            });
+          }
 
-    // 如果任务已完成，更新数据库
-    if (todo.completed) {
-      wx.cloud.callFunction({
-        name: 'updateStatistics',
-        data: {
-          date: new Date().toDateString(),
-          type: type,
-          increment: -1
-        },
-        success: res => {
-          console.log('更新统计数据成功', res);
-        },
-        fail: err => {
-          console.error('更新统计数据失败', err);
+          if (type === 'urgent') {
+            that.data.urgentTodos.splice(idx, 1);
+          } else {
+            that.data.nonUrgentTodos.splice(idx, 1);
+          }
+          that.setData({
+            urgentTodos: that.data.urgentTodos,
+            nonUrgentTodos: that.data.nonUrgentTodos,
+            leftCount: that.getLeftCount(),
+            toastHidden: false // 显示 toast
+          });
+      
+          that.saveTodos();
+          console.log('删除任务后 urgentTodos:', that.data.urgentTodos); // 打印 urgentTodos
+          console.log('删除任务后 nonUrgentTodos:', that.data.nonUrgentTodos); // 打印 nonUrgentTodos
+      
+          // 隐藏 toast
+          setTimeout(() => {
+            that.setData({ toastHidden: true });
+          }, 2000);
+
+        } else if (res.cancel) {
+          // 用户点击了取消按钮
+          console.log('用户点击取消');
         }
-      });
-    }
-
-    if (type === 'urgent') {
-      this.data.urgentTodos.splice(idx, 1);
-    } else {
-      this.data.nonUrgentTodos.splice(idx, 1);
-    }
-
-    this.setData({
-      urgentTodos: this.data.urgentTodos,
-      nonUrgentTodos: this.data.nonUrgentTodos,
-      leftCount: this.getLeftCount(),
-      toastHidden: false // 显示 toast
-    });
-
-    this.saveTodos();
-    console.log('删除任务后 urgentTodos:', this.data.urgentTodos); // 打印 urgentTodos
-    console.log('删除任务后 nonUrgentTodos:', this.data.nonUrgentTodos); // 打印 nonUrgentTodos
-
-    // 隐藏 toast
-    setTimeout(() => {
-      this.setData({ toastHidden: true });
-    }, 2000);
-  },
-
-  confirmDeleteHandle: function () {
-    const selectedTodelite = this.data.selectedTodelite;
-
-    console.log('删除任务:', {
-      urgent: selectedTodelite.urgent.map(idx => this.data.urgentTodos[idx]),
-      nonUrgent: selectedTodelite.nonUrgent.map(idx => this.data.nonUrgentTodos[idx])
-    });
-
-    selectedTodelite.urgent.forEach(idx => {
-      if (this.data.urgentTodos[idx].completed) {
-        wx.cloud.callFunction({
-          name: 'updateStatistics',
-          data: {
-            date: new Date().toDateString(),
-            type: 'urgent',
-            increment: -1
-          },
-          success: res => {
-            console.log('更新统计数据成功', res);
-          },
-          fail: err => {
-            console.error('更新统计数据失败', err);
-          }
-        });
       }
     });
 
-    selectedTodelite.nonUrgent.forEach(idx => {
-      if (this.data.nonUrgentTodos[idx].completed) {
-        wx.cloud.callFunction({
-          name: 'updateStatistics',
-          data: {
-            date: new Date().toDateString(),
-            type: 'non-urgent',
-            increment: -1
-          },
-          success: res => {
-            console.log('更新统计数据成功', res);
-          },
-          fail: err => {
-            console.error('更新统计数据失败', err);
-          }
-        });
-      }
-    });
-
-    this.setData({
-      urgentTodos: this.data.urgentTodos.filter((_, index) => !selectedTodelite.urgent.includes(index)),
-      nonUrgentTodos: this.data.nonUrgentTodos.filter((_, index) => !selectedTodelite.nonUrgent.includes(index)),
-      deleteMode: false,
-      selectedTodelite: {
-        urgent: [],
-        nonUrgent: []
-      },
-      leftCount: this.getLeftCount(),
-      toastHidden: false // 显示 toast
-    });
-
-    this.saveTodos();
-    console.log('确认删除后 urgentTodos:', this.data.urgentTodos); // 打印 urgentTodos
-    console.log('确认删除后 nonUrgentTodos:', this.data.nonUrgentTodos); // 打印 nonUrgentTodos
-
-    // 隐藏 toast
-    setTimeout(() => {
-      this.setData({ toastHidden: true });
-    }, 2000);
   },
+
+
+
+
 
   getLeftCount: function () {
     return this.data.urgentTodos.filter(todo => !todo.completed).length + this.data.nonUrgentTodos.filter(todo => !todo.completed).length;
@@ -284,4 +237,5 @@ Page({
   hideToast: function () {
     this.setData({ toastHidden: true });
   }
+  
 });
