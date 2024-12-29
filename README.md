@@ -5,4 +5,3 @@
 <p align=center>
   <img src="https://s2.loli.net/2024/12/29/GwoCMfQtWNx63KH.jpg" alt="体验版二维码" width="200">
 </p>
-image/
