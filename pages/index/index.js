@@ -22,10 +22,10 @@ Page({
     ],
     gridBoxes: [
 
-      { text: '院校查询', image: 'https://s2.loli.net/2024/12/27/RN6GmoVY8HFXKe1.jpg',url:'/pages/searchschool/searchschool' },
-      { text: '备考社群', image: 'https://s2.loli.net/2024/12/27/LUOjFDkmMBhcIz5.jpg' ,url:'/pages/shequn/shequn'},
-      { text: '考研日程', image: 'https://s2.loli.net/2024/12/27/npQIJjFO7RdTkox.jpg' ,url:'/pages/richeng/richeng'},
-      { text: '考研指南', image: 'https://s2.loli.net/2024/12/27/fOqpHJu9h45gmKT.jpg' ,url:'/pages/zhinan/zhinan'},
+      { text: '院校查询', image: 'https://pic1.imgdb.cn/item/67722bb8d0e0a243d4ec6d20.jpg',url:'/pages/searchschool/searchschool' },
+      { text: '备考社群', image: 'https://pic1.imgdb.cn/item/67722bb7d0e0a243d4ec6d1d.jpg' ,url:'/pages/shequn/shequn'},
+      { text: '考研日程', image: 'https://pic1.imgdb.cn/item/67722bb7d0e0a243d4ec6d1e.jpg' ,url:'/pages/richeng/richeng'},
+      { text: '考研指南', image: 'https://pic1.imgdb.cn/item/67722bb7d0e0a243d4ec6d1f.jpg' ,url:'/pages/zhinan/zhinan'},
     
     ]
   },

@@ -1,5 +1,5 @@
 <view class="container">
-     <image class="icon" src="https://s2.loli.net/2024/12/27/eYifAoxJs9j1ngS.png" mode="aspectFit" />
+     <image class="icon" src="https://pic1.imgdb.cn/item/67722c14d0e0a243d4ec6d36.png" mode="aspectFit" />
     <input class="input" type="text" placeholder="{{usernamePlaceholder}}" bindinput="bindUsernameInput"  data-field="username" />
     <input class="input" type="password" placeholder="{{passwordPlaceholder}}" bindinput="bindPasswordInput"  data-field="password" />
     <button class="button" bindtap="register">注册</button>
